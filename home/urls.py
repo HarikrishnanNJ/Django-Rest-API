@@ -1,8 +1,10 @@
 from django.urls import path
-from .  views import StudentDetailView,listcreate
+from . views import PersonListCreateView,PersonDetailView
+
 
 urlpatterns = [
-    path('', listcreate.as_view(),name='listcreate'),
-    # path('',listapi.as_view(),name='listapi'),
-    path('Student/<pk>/' ,StudentDetailView.as_view() , name='student_details' )
+   
+    path('',PersonListCreateView,name='person-list-create'),
+    path('person/<pk>/',PersonDetailView,name='person_details'),
+ 
 ]
